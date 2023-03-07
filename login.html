@@ -11,23 +11,14 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
+  <title>Login</title>
 </head>
 <body>
-<!-- The register form -->
-  <form action="register.php" method="post">
+<!-- The login form -->
+  <form action="login.php" method="post">
     <!-- class named "container" is assigned to div -->
     <div class="container">
-      <h1>Register</h1>
-
-      <label for="username"><b>Username</b></label>
-      <input
-        type="text"
-        placeholder="Enter Username"
-        name="username"
-        id="username"
-        required
-      />
+      <h1>Login</h1>
 
       <label for="email"><b>Email</b></label>
       <input
@@ -47,20 +38,7 @@
         required
       />
 
-      <label for="pwd-repeat"><b>Repeat Password</b></label>
-      <input
-        type="password"
-        placeholder="Repeat Password"
-        name="pwd-repeat"
-        id="pwd-repeat"
-        required
-      />
-
-      <input type="submit" value="Register">
-    </div>
-
-    <div>
-      <p>Already have an account? <a href="login.html">Log in</a>.</p>
+      <input type="submit" value="Login">
     </div>
   </form>
 </body>

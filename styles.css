@@ -1,3 +1,10 @@
+/**
+  LandingZone
+  Marcel.BERLINGER
+  05.03.2023
+  v0.1
+ */
+
 form {
   display: flex;
   flex-direction: column;
@@ -5,7 +12,10 @@ form {
 }
 
 .container{
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }

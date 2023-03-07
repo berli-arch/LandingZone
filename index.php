@@ -1,3 +1,10 @@
+<!--
+  LandingZone
+  Marcel.BERLINGER
+  05.03.2023
+  v0.1
+-->
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -24,11 +31,45 @@
 </head>
 
 <body>
-  <!-- Add your site or application content here -->
-  <div class="topnav">
-    <a href="">Login</a>
-    <a href="register.html">Register</a>
-  </div>
+  <!-- Checks if the cookie from the last session is available and logs the user in -->
+  <?php
+    require_once('csv-handle.php');
+
+    if(isset($_COOKIE['usr_hash'])) {
+      $f_accounts = 'accounts.csv';
+      $usr_hash = $_COOKIE['usr_hash'];
+
+      $corr_cookie = contains_str($f_accounts, $usr_hash);
+      if($corr_cookie) {
+        show_account();
+      } else {
+        setcookie("usr_hash", "");
+        show_undefined();
+      }
+    } else {
+      show_undefined();
+    }
+
+  /**
+   * Shows the Login or Register option.
+   */
+    function show_undefined() {
+      echo '<div class="topnav" id="nav_id">';
+      echo '<a href="login.html">Login</a>';
+      echo '<a href="register.html">Register</a>';
+      echo '</div>';
+    }
+
+  /**
+   * Shows the Account or Sign Out option.
+   */
+    function show_account() {
+      echo '<div class="topnav">';
+      echo '<a href="signout.php">Sign Out</a>';
+      echo '<a href="">Account</a>';
+      echo '</div>';
+    }
+  ?>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
