@@ -18,49 +18,169 @@
   <form action="register.php" method="post">
     <!-- class named "container" is assigned to div -->
     <div class="container">
-      <h1>Register</h1>
+      <h1>Account</h1>
+      <div class="register">
+        <label for="genderMister"><b>Form of Address</b></label>
+        <input
+          type="radio"
+          id="genderMister"
+          name="radioGender"
+          value="mister"
+          required
+        />
+        <label for="genderMister">Mister</label>
+        <input
+          type="radio"
+          id="genderMiss"
+          name="radioGender"
+          value="miss"
+          required
+        />
+        <label for="genderMiss">Miss</label><br>
+      </div>
 
-      <label for="username"><b>Username</b></label>
-      <input
-        type="text"
-        placeholder="Enter Username"
-        name="username"
-        id="username"
-        required
-      />
+      <div class="register">
+        <label for="name"><b>Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          name="name"
+          id="name"
+          required
+        /><br>
+      </div>
 
-      <label for="email"><b>Email</b></label>
-      <input
-        type="text"
-        placeholder="Enter Email"
-        name="email"
-        id="email"
-        required
-      />
+      <div class="register">
+        <label for="surname"><b>Surname</b></label>
+        <input
+          type="text"
+          placeholder="Enter Surname"
+          name="surname"
+          id="surname"
+          required
+        /><br>
+      </div>
 
-      <label for="pwd"><b>Password</b></label>
-      <input
-        type="password"
-        placeholder="Enter Password"
-        name="pwd"
-        id="pwd"
-        required
-      />
+      <div class="register">
+        <label for="birthdate"><b>Birthdate</b></label>
+        <input
+          type="date"
+          placeholder="Enter Birthdate"
+          name="birthdate"
+          id="birthdate"
+          required
+        /><br>
+      </div>
 
-      <label for="pwd-repeat"><b>Repeat Password</b></label>
-      <input
-        type="password"
-        placeholder="Repeat Password"
-        name="pwd-repeat"
-        id="pwd-repeat"
-        required
-      />
+      <div class="register">
+        <label for="email"><b>Email</b></label>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        /><br>
+      </div>
 
-      <input type="submit" value="Register">
+      <div class="register">
+        <label for="pwd"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="pwd"
+          id="pwd"
+          required
+        /><br>
+      </div>
+
+      <div class="register">
+        <label for="pwd-repeat"><b>Repeat Password</b></label>
+        <input
+          type="password"
+          placeholder="Repeat Password"
+          name="pwd-repeat"
+          id="pwd-repeat"
+          required
+        /><br>
+      </div>
     </div>
 
     <div>
       <p>Already have an account? <a href="login.html">Log in</a>.</p>
+    </div>
+
+    <div class="container">
+      <h1>Address</h1>
+      <div class="register">
+        <label for="street"><b>Street</b></label>
+        <input
+          type="text"
+          placeholder="Enter Street"
+          name="street"
+          id="street"
+          required
+        /><br>
+      </div>
+
+      <div class="register">
+        <label for="city"><b>City</b></label>
+        <input
+          type="text"
+          placeholder="Enter City"
+          name="city"
+          id="city"
+          required
+        /><br>
+      </div>
+
+      <div class="register">
+        <label for="zip"><b>Postal code</b></label>
+        <input
+          type="number"
+          placeholder="ZIP/Postal code"
+          name="zip"
+          id="zip"
+          min="0"
+          step="1"
+          required
+        /><br>
+      </div>
+
+      <div class="register">
+        <label for="states"><b>State</b></label>
+        <select name="states" id="states">
+          <option></option>
+          <option value="ohio">Ohio</option>
+        </select>
+      </div>
+
+      <div class="register">
+        <label for="phone_number"><b>Phone</b></label>
+        <input
+          type="text"
+          placeholder="+xx Enter Phone number"
+          name="phone_number"
+          id="phone_number"
+        />
+      </div>
+    </div><br><br>
+
+    <div class="container">
+      <h1>File Upload</h1>
+      <div class="register">
+        <form>
+          <input
+            type="file"
+            id="upload"
+            name="filename"
+          />
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <input type="submit" value="Register">
     </div>
   </form>
 </body>

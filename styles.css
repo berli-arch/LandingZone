@@ -11,11 +11,19 @@ form {
   align-items: center;
 }
 
-.container{
-  max-width: 700px;
+.container {
+  max-width: 500px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.register {
+  padding-bottom: 12px;
+}
+
+.centered {
+  padding-left: 25px;
 }

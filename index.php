@@ -10,7 +10,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>LandingZone</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,6 +55,7 @@
    */
     function show_undefined() {
       echo '<div class="topnav" id="nav_id">';
+      echo '<img src="../landing_zone_logo.png">';
       echo '<a href="login.html">Login</a>';
       echo '<a href="register.html">Register</a>';
       echo '</div>';

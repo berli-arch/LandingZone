@@ -192,6 +192,15 @@ textarea {
   opacity: 0.9;
 }
 
+body {
+  background-image: url('../modern-site.jpg');
+}
+
+img {
+  width: 50px;
+  padding-left: 50%;
+}
+
 /*
  * Clearfix: contain floats
  *
