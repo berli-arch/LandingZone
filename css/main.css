@@ -194,6 +194,7 @@ textarea {
 
 body {
   background-image: url('../modern-site.jpg');
+  background-size: cover;
 }
 
 img {

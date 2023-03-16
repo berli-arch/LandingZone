@@ -9,6 +9,7 @@
 <?php
   require_once('encrypt.php');
   require_once('csv-handle.php');
+  require_once('database.php');
 
   // The filename for the stored accounts (username, email, hash)
   $f_accounts = 'accounts.csv';
@@ -16,6 +17,7 @@
   if(isset($_POST['name']) && isset($_POST['surname'])
     && isset($_POST['email']) && isset($_POST['pwd'])
     && isset($_POST['pwd-repeat']) && isset($_POST['city'])) {
+    $gender = $_POST['radioGender'];
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $birthdate = $_POST['birthdate'];
@@ -25,15 +27,10 @@
     $street = $_POST['street'];
     $city = $_POST['city'];
     $zip = $_POST['zip'];
-    $state = $_POST['state'];
+    $state = $_POST['states'];
     $phone = $_POST['phone_number'];
 
-    $gender = '';
-    if(isset($_POST['genderMister'])) {
-      $gender = 'Mister';
-    } else if(isset($_POST['genderMiss'])) {
-      $gender = 'Miss';
-    }
+    $file = $_FILES['file'];
 
     // Validating the entered email.
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -60,15 +57,28 @@
         .$state.';'.$phone.';'.$password_hash
       );
 
-      $success = write_append($f_accounts, $user_registration);
+      write($street, $city, $zip, 0, 0, $gender, $name, $surname, $birthdate, 0, $email, $phone, $password_hash, "jjjkkk");
+
+      if(isset($file)) {
+        if($file['error'] === UPLOAD_ERR_OK) {
+          $tmp_name = $file['tmp_name'];
+          $name = $file['name'];
+
+          echo "Path of file: ".$tmp_name."<br>";
+          echo "Name of file: ".$name."<br>";
+        }
+        echo "File set<br>";
+      }
+
+      /*$success = write_append($f_accounts, $user_registration);
       if($success) {
         setcookie("usr_hash", $password_hash);
       } else {
         header('location:register.html');
         return;
-      }
+      }*/
 
-      header('location:index.php');
+      //header('location:index.php');
     } else {
       reg_failed();
     }
