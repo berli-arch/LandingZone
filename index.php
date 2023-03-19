@@ -3,6 +3,8 @@
   Marcel.BERLINGER
   05.03.2023
   v0.1
+
+  The index page (home page)
 -->
 
 <!DOCTYPE html>
@@ -25,21 +27,21 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body id="index">
   <!-- Checks if the cookie from the last session is available and logs the user in -->
   <?php
-    require_once('csv-handle.php');
+    require_once('database.php');
+    //require_once('csv-handle.php');
 
     if(isset($_COOKIE['usr_hash'])) {
-      $f_accounts = 'accounts.csv';
       $usr_hash = $_COOKIE['usr_hash'];
 
-      $corr_cookie = contains_str($f_accounts, $usr_hash);
+      $corr_cookie = checkUserHash($usr_hash);
       if($corr_cookie) {
         show_account();
       } else {
@@ -66,8 +68,9 @@
    */
     function show_account() {
       echo '<div class="topnav">';
+      echo '<img src="../landing_zone_logo.png">';
       echo '<a href="signout.php">Sign Out</a>';
-      echo '<a href="">Account</a>';
+      echo '<a href="account.php">Account</a>';
       echo '</div>';
     }
   ?>

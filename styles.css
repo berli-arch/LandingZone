@@ -1,8 +1,10 @@
 /**
   LandingZone
   Marcel.BERLINGER
-  05.03.2023
+  18.03.2023
   v0.1
+
+  The style sheet for this webpage
  */
 
 form {
@@ -14,10 +16,10 @@ form {
 .container {
   max-width: 500px;
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(54, 53, 53, 0.42);
   padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.56);
 }
 
 .register {
@@ -26,4 +28,222 @@ form {
 
 .centered {
   padding-left: 25px;
+}
+
+#index img {
+  width: 50px;
+  padding-left: 50%;
+}
+
+#account img {
+  width: 6%;
+  padding-left: 10px;
+}
+
+#account .container {
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(54, 53, 53, 0.42);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.56);
+}
+
+#account h1 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.label-account-left {
+  display: block;
+  font: -apple-system-tall-body;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.label-account-right {
+  display: block;
+  font: -apple-system-tall-body;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.label-account-left-div {
+  display: inline-block;
+  width: 23%;
+  float: left;
+}
+
+.label-account-right-div {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  width: 55%;
+}
+
+.img-upload {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.div-img {
+  position: absolute;
+  width: 150%;
+  max-width: 2400px;
+  max-height: 2400px;
+  padding-left: 600px;
+  margin-top: 10px;
+}
+
+.input-text {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#login-body label {
+  display: inline-block;
+  width: 110px;
+  text-align: left;
+  font: -apple-system-tall-body;
+  font-size: 20px;
+  color: black;
+  vertical-align: middle;
+}
+
+#login-body h1 {
+  color: black;
+}
+
+.input-text {
+  scale: 140%;
+  border-radius: 2px;
+  border-width: 0px;
+  border-color: black;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+.login-div {
+  display: block;
+  padding-bottom: 12px;
+}
+
+.submit {
+  scale: 120%;
+  margin-top: 20px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 20px;
+  border-width: 2px;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+.submit:hover {
+  scale: 130%;
+}
+.submit:active {
+  scale: 110%;
+  color: lightblue;
+}
+
+#login-body .container {
+  position: absolute;
+  top: 408px;
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 53, 53, 0.42);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.56);
+}
+
+#register-body h1 {
+  color: black;
+}
+
+.submit-register {
+  scale: 120%;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 20px;
+  border-width: 2px;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+.submit-register:hover {
+  scale: 130%;
+}
+.submit-register:active {
+  scale: 110%;
+  color: lightblue;
+}
+
+.radio-btn {
+  margin-left: 60px;
+  color: aquamarine;
+}
+
+.radio-label {
+  display: inline-block;
+  width: 80px;
+  text-align: left;
+  font: -apple-system-tall-body;
+  font-size: 20px;
+  color: black;
+  vertical-align: middle;
+}
+
+.reg-label {
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+  font: -apple-system-tall-body;
+  font-size: 20px;
+  color: black;
+  vertical-align: middle;
+}
+
+.input-text {
+  scale: 140%;
+  border-radius: 2px;
+  border-width: 0px;
+  border-color: black;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+.input-text-date {
+  scale: 140%;
+  border-radius: 2px;
+  border-width: 0px;
+  border-color: black;
+  margin-left: 8px;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+.input-select {
+  scale: 140%;
+  border-radius: 2px;
+  border-width: 0px;
+  border-color: black;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
+}
+
+#register-body p {
+  color: rgba(169,169,169,100);
+}
+
+.upload-btn {
+  scale: 140%;
+  border-radius: 2px;
+  border-width: 0px;
+  border-color: black;
+  color: rgba(169,169,169,100);
+  background-color: rgba(54, 53, 53, 0.42);
 }

@@ -7,6 +7,7 @@
   Handles the encrypting of the password by using a hashing
   function and by adding some salt and some pepper to the password
 -->
+
 <?php
   $salt = "$2a$07$9NQ7+UHV7X5SIIR/V?!YFXT-";
   $pepper = "P84WI§K.CF17ZC7/%70!SYAQ";

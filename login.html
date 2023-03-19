@@ -9,36 +9,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
 </head>
-<body>
+<body id="login-body">
 <!-- The login form -->
   <form action="login.php" method="post">
     <!-- class named "container" is assigned to div -->
     <div class="container">
       <h1>Login</h1>
 
-      <label for="email"><b>Email</b></label>
-      <input
-        type="text"
-        placeholder="Enter Email"
-        name="email"
-        id="email"
-        required
-      />
+      <div class="login-div">
+        <label for="email"><b>Email</b></label>
+        <input class="input-text"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          id="email"
+          required
+        />
+      </div>
 
-      <label for="pwd"><b>Password</b></label>
-      <input
-        type="password"
-        placeholder="Enter Password"
-        name="pwd"
-        id="pwd"
-        required
-      />
+      <div class="login-div">
+        <label for="pwd"><b>Password</b></label>
+        <input class="input-text"
+          type="password"
+          placeholder="Enter Password"
+          name="pwd"
+          id="pwd"
+          required
+        />
+      </div>
 
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" class="submit">
     </div>
   </form>
 </body>

@@ -197,11 +197,6 @@ body {
   background-size: cover;
 }
 
-img {
-  width: 50px;
-  padding-left: 50%;
-}
-
 /*
  * Clearfix: contain floats
  *

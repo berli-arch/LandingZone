@@ -6,10 +6,12 @@
 
   Handles the login process.
 -->
+
 <?php
-  require_once('csv-handle.php');
+  //require_once('csv-handle.php');
   require_once('encrypt.php');
-  $f_accounts = 'accounts.csv';
+  require_once('database.php');
+  //$f_accounts = 'accounts.csv';
 
   if(isset($_POST['email']) && isset($_POST['pwd'])) {
     $email = $_POST['email'];
@@ -26,16 +28,20 @@
     }
 
     // Generating the hash, checking if the user is not already registered and saving the cookie.
-    $password_hash = enc_password($password);
+    $to_hash = $email.$password;
+    $password_hash = enc_password($to_hash);
     echo $password_hash;
-    if(contains_str($f_accounts, $email) && contains_str($f_accounts, $password_hash)) {
+
+    if(checkUserHash($password_hash)) {
       setcookie("usr_hash", $password_hash);
       header('location:index.php');
     } else {
-      echo
+      echo $password_hash;
+
+      /*echo
       "<script>
         alert('This account may not exist');
         document.location.href = 'login.html';
-      </script>";
+      </script>";*/
     }
   }

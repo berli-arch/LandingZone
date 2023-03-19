@@ -6,6 +6,7 @@
 
   Handles the register process
 -->
+
 <?php
   require_once('encrypt.php');
   require_once('csv-handle.php');
@@ -30,7 +31,7 @@
     $state = $_POST['states'];
     $phone = $_POST['phone_number'];
 
-    $file = $_FILES['file'];
+    $file = $_FILES['filename'];
 
     // Validating the entered email.
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -52,33 +53,40 @@
       }
 
       // Creating the array with the users details, writing the csv and storing the hash as the cookie.
-      $user_registration = array($gender.';'.$name.';'.$surname.';'
+      /*$user_registration = array($gender.';'.$name.';'.$surname.';'
         .$birthdate.';'.$email.';'.$street.';'.$city.';'.$zip.';'
         .$state.';'.$phone.';'.$password_hash
-      );
+      );*/
 
-      write($street, $city, $zip, 0, 0, $gender, $name, $surname, $birthdate, 0, $email, $phone, $password_hash, "jjjkkk");
-
+      $file_hash = null;
+      $tmp_name = null;
+      $filepath = null;
       if(isset($file)) {
         if($file['error'] === UPLOAD_ERR_OK) {
           $tmp_name = $file['tmp_name'];
-          $name = $file['name'];
+          $file_hash = hash_file('sha512', $tmp_name);
 
-          echo "Path of file: ".$tmp_name."<br>";
-          echo "Name of file: ".$name."<br>";
+          $filepath = 'uploads/'.$file_hash.'.'.pathinfo($file['name'], PATHINFO_EXTENSION);
         }
-        echo "File set<br>";
       }
 
-      /*$success = write_append($f_accounts, $user_registration);
+      $uid = getNextUID();
+      $address_id = getNextAddressID();
+      $success = write($street, $city, $zip, (int)$state, $uid, $gender, $name, $surname, $birthdate, $address_id, $email, $phone, $password_hash, $file_hash);
+
+      //$success = write_append($f_accounts, $user_registration);
       if($success) {
+        if($tmp_name != null
+          || $filepath != null) {
+          move_uploaded_file($tmp_name, $filepath);
+        }
         setcookie("usr_hash", $password_hash);
       } else {
-        header('location:register.html');
+        regFailed();
         return;
-      }*/
+      }
 
-      //header('location:index.php');
+      header('location:index.php');
     } else {
       reg_failed();
     }

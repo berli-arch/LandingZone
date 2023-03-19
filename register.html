@@ -3,32 +3,35 @@
   Marcel.BERLINGER
   05.03.2023
   v0.1
+
+  The registering page
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
 </head>
-<body>
+<body id="register-body">
 <!-- The register form -->
-  <form action="register.php" method="post">
+  <form method="post" enctype="multipart/form-data" action="register.php">
     <!-- class named "container" is assigned to div -->
     <div class="container">
       <h1>Account</h1>
       <div class="register">
-        <label for="genderMister"><b>Form of Address</b></label>
-        <input
+        <label for="genderMister" class="radio-label"><b>Form of Address</b></label>
+        <input class="radio-btn"
           type="radio"
           id="genderMister"
           name="radioGender"
           value="mister"
           required
         />
-        <label for="genderMister">Mister</label>
+        <label for="genderMister" class="radio-label">Mister</label>
         <input
           type="radio"
           id="genderMiss"
@@ -36,12 +39,12 @@
           value="miss"
           required
         />
-        <label for="genderMiss">Miss</label><br>
+        <label for="genderMiss" class="reg-label">Miss</label><br>
       </div>
 
       <div class="register">
-        <label for="name"><b>Name</b></label>
-        <input
+        <label for="name" class="reg-label"><b>Name</b></label>
+        <input class="input-text"
           type="text"
           placeholder="Enter Name"
           name="name"
@@ -51,8 +54,8 @@
       </div>
 
       <div class="register">
-        <label for="surname"><b>Surname</b></label>
-        <input
+        <label for="surname" class="reg-label"><b>Surname</b></label>
+        <input class="input-text"
           type="text"
           placeholder="Enter Surname"
           name="surname"
@@ -62,8 +65,8 @@
       </div>
 
       <div class="register">
-        <label for="birthdate"><b>Birthdate</b></label>
-        <input
+        <label for="birthdate" class="reg-label"><b>Birthdate</b></label>
+        <input class="input-text-date"
           type="date"
           placeholder="Enter Birthdate"
           name="birthdate"
@@ -73,8 +76,8 @@
       </div>
 
       <div class="register">
-        <label for="email"><b>Email</b></label>
-        <input
+        <label for="email" class="reg-label"><b>Email</b></label>
+        <input class="input-text"
           type="text"
           placeholder="Enter Email"
           name="email"
@@ -84,8 +87,8 @@
       </div>
 
       <div class="register">
-        <label for="pwd"><b>Password</b></label>
-        <input
+        <label for="pwd" class="reg-label"><b>Password</b></label>
+        <input class="input-text"
           type="password"
           placeholder="Enter Password"
           name="pwd"
@@ -95,8 +98,8 @@
       </div>
 
       <div class="register">
-        <label for="pwd-repeat"><b>Repeat Password</b></label>
-        <input
+        <label for="pwd-repeat" class="reg-label"><b>Repeat Password</b></label>
+        <input class="input-text"
           type="password"
           placeholder="Repeat Password"
           name="pwd-repeat"
@@ -107,14 +110,14 @@
     </div>
 
     <div>
-      <p>Already have an account? <a href="login.html">Log in</a>.</p>
+      <p>Already have an account? <a href="login.html">Log in</a></p>
     </div>
 
     <div class="container">
       <h1>Address</h1>
       <div class="register">
-        <label for="street"><b>Street</b></label>
-        <input
+        <label for="street" class="reg-label"><b>Street</b></label>
+        <input class="input-text"
           type="text"
           placeholder="Enter Street"
           name="street"
@@ -124,8 +127,8 @@
       </div>
 
       <div class="register">
-        <label for="city"><b>City</b></label>
-        <input
+        <label for="city" class="reg-label"><b>City</b></label>
+        <input class="input-text"
           type="text"
           placeholder="Enter City"
           name="city"
@@ -135,8 +138,8 @@
       </div>
 
       <div class="register">
-        <label for="zip"><b>Postal code</b></label>
-        <input
+        <label for="zip" class="reg-label"><b>Postal code</b></label>
+        <input class="input-text"
           type="number"
           placeholder="ZIP/Postal code"
           name="zip"
@@ -148,16 +151,16 @@
       </div>
 
       <div class="register">
-        <label for="states"><b>State</b></label>
-        <select name="states" id="states">
+        <label for="states" class="reg-label"><b>State</b></label>
+        <select name="states" id="states" class="input-select">
           <option></option>
-          <option value="ohio">Ohio</option>
+          <option value="0">Ohio</option>
         </select>
       </div>
 
       <div class="register">
-        <label for="phone_number"><b>Phone</b></label>
-        <input
+        <label for="phone_number" class="reg-label"><b>Phone</b></label>
+        <input class="input-text"
           type="text"
           placeholder="+xx Enter Phone number"
           name="phone_number"
@@ -168,17 +171,17 @@
 
     <div class="container">
       <h1>File Upload</h1>
-      <div class="register">
-          <input
-            type="file"
-            id="upload"
-            name="filename"
-          />
-      </div>
+      <input
+        type="file"
+        id="upload"
+        name="filename"
+        style="display: none"
+      />
+      <input type="button" value="Browse.." class="submit" onclick="document.getElementById('upload').click();"/>
     </div><br><br>
 
     <div class="container">
-      <input type="submit" value="Register">
+      <input type="submit" value="Register" class="submit-register">
     </div>
   </form>
 </body>
