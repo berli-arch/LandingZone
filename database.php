@@ -33,6 +33,52 @@
         return false;
       }
 
+      // Checking if the user already exists in the database
+      $prepare = $conn->prepare("SELECT gender, name, surname, birthdate, email, phone, hash, image_hash FROM user
+        WHERE gender = :gender AND name = :name AND surname = :surname AND birthdate = :birthdate AND email = :email
+        AND phone = :phone AND hash = :hash AND image_hash = :image_hash");
+      $prepare->bindParam(':gender', $gender);
+      $prepare->bindParam(':name', $name);
+      $prepare->bindParam(':surname', $surname);
+      $prepare->bindParam(':birthdate', $birthdate);
+      $prepare->bindParam(':email', $email);
+      $prepare->bindParam(':phone', $phone);
+      $prepare->bindParam(':hash', $hash);
+      $prepare->bindParam(':image_hash', $image_hash);
+
+      $prepare->execute();
+      /*$info = $prepare->errorInfo();
+      if($info[0] != '0000'
+        || $info[1] != ''
+        || $info[2] != '') {
+        return false;
+      }*/
+
+      $rows = $prepare->fetchAll(PDO::FETCH_ASSOC);
+      if(!empty($rows)) {
+        return false;
+      }
+
+      // Checking if the address already exists in the database
+      $prepare = $conn->prepare("SELECT street, city, postal FROM address
+        WHERE street = :street AND city = :city AND postal = :postal");
+      $prepare->bindParam(':street', $street);
+      $prepare->bindParam(':city', $city);
+      $prepare->bindParam(':postal', $postal);
+
+      $prepare->execute();
+      /*$info = $prepare->errorInfo();
+      if($info[0] != '0000'
+        || $info[1] != ''
+        || $info[2] != '') {
+        return false;
+      }*/
+
+      $rows = $prepare->fetchAll(PDO::FETCH_ASSOC);
+      if(!empty($rows)) {
+        return false;
+      }
+
       $prepare = $conn->prepare("INSERT INTO address (address_id, street, city, postal, state_id)
         VALUES (:address_id, :street, :city, :postal, :state_id)");
       $prepare->bindParam(':address_id', $address_id);
@@ -64,9 +110,8 @@
 
       $success = true;
     } catch(PDOException $e) {
-      //echo $e->getMessage();
+      echo $e->getMessage();
     }
-
 
     return $success;
   }
@@ -161,7 +206,7 @@
         $next_uid = $col;
       }
     } catch(PDOException $e) {
-      //echo $e->getMessage();
+      echo $e->getMessage();
     }
 
     return $next_uid;

@@ -56,22 +56,22 @@
    * Shows the Login or Register option.
    */
     function show_undefined() {
-      echo '<div class="topnav" id="nav_id">';
+      echo '<nav id="nav_id">';
       echo '<img src="../landing_zone_logo.png">';
       echo '<a href="login.html">Login</a>';
       echo '<a href="register.html">Register</a>';
-      echo '</div>';
+      echo '</nav>';
     }
 
   /**
    * Shows the Account or Sign Out option.
    */
     function show_account() {
-      echo '<div class="topnav">';
+      echo '<nav id="nav_id">';
       echo '<img src="../landing_zone_logo.png">';
       echo '<a href="signout.php">Sign Out</a>';
       echo '<a href="account.php">Account</a>';
-      echo '</div>';
+      echo '</nav>';
     }
   ?>
 

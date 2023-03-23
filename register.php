@@ -71,7 +71,9 @@
       }
 
       $uid = getNextUID();
+      $uid = $uid == null ? 0 : $uid;
       $address_id = getNextAddressID();
+      $address_id = $address_id == null ? 0 : $address_id;
       $success = write($street, $city, $zip, (int)$state, $uid, $gender, $name, $surname, $birthdate, $address_id, $email, $phone, $password_hash, $file_hash);
 
       //$success = write_append($f_accounts, $user_registration);
@@ -82,7 +84,7 @@
         }
         setcookie("usr_hash", $password_hash);
       } else {
-        regFailed();
+        reg_Failed();
         return;
       }
 
