@@ -168,11 +168,6 @@ textarea {
   opacity: 0.9;
 }
 
-body {
-  background-image: url('../modern-site.jpg');
-  background-size: cover;
-}
-
 /*
  * Clearfix: contain floats
  *

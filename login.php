@@ -30,18 +30,15 @@
     // Generating the hash, checking if the user is not already registered and saving the cookie.
     $to_hash = $email.$password;
     $password_hash = enc_password($to_hash);
-    echo $password_hash;
 
     if(checkUserHash($password_hash)) {
       setcookie("usr_hash", $password_hash);
       header('location:index.php');
     } else {
-      echo $password_hash;
-
-      /*echo
+      echo
       "<script>
         alert('This account may not exist');
         document.location.href = 'login.html';
-      </script>";*/
+      </script>";
     }
   }
