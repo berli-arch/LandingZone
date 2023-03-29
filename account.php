@@ -49,14 +49,20 @@
               $img_hash = $hash;
             }
 
-            echo '<div class="div-img">';
-            $files = scandir("uploads");
-            $files = array_diff($files, array('..', '.', '.DS_Store'));
-            foreach($files as $img) {
-              if(str_contains($img, $img_hash)) {
-                echo '<img src="'.'uploads/'.$img.'" class="img-upload">';
-                break;
+            if($img_hash != null
+              || $img_hash != '') {
+              echo '<div class="div-img">';
+              $files = scandir("uploads");
+              $files = array_diff($files, array('..', '.', '.DS_Store'));
+              foreach($files as $img) {
+                if(str_contains($img, $img_hash)) {
+                  echo '<img src="'.'uploads/'.$img.'" class="img-upload">';
+                  break;
+                }
               }
+            } else {
+              echo '<div class="div-img">';
+              echo '<img src="img/no_usr_img.png" class="img-upload">';
             }
           }
           echo '</div>';
