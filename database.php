@@ -11,10 +11,10 @@
   function createConn() {
     $conn = null;
 
-    $servername = "127.0.0.1:3306";
-    $username = "root";
-    $password = "";
-    $dbname = "account";
+    $servername = "lz-2023.database.windows.net";
+    $username = "bm-2023";
+    $password = "Lbs4ever.";
+    $dbname = "lz-2023";
 
     try {
       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
