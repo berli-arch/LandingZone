@@ -11,9 +11,9 @@
   function createConn() {
     $conn = null;
 
-    $servername = "127.0.0.1:3306";
-    $username = "root";
-    $password = "";
+    $servername = "bm2023.mysql.database.azure.com";
+    $username = "bm2023";
+    $password = "Lbs4ever.";
     $dbname = "account";
 
     try {
