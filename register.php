@@ -88,7 +88,7 @@
         return;
       }
 
-      header('location:index.php');
+      header("location: index.php");
     } else {
       reg_failed();
     }
@@ -98,5 +98,5 @@
  * Called if the registration failed, to reload the registration page.
  */
   function reg_failed() {
-    header('location:register.html');
+    header("location: register.html");
   }

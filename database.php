@@ -111,7 +111,7 @@
 
       $success = true;
     } catch(PDOException $e) {
-      echo $e->getMessage();
+      // echo $e->getMessage();
     }
 
     return $success;
@@ -123,11 +123,8 @@
       try {
         $conn = createConn();
         if(!$conn) {
-          echo "Failed";
           return false;
         }
-
-        echo "In loop";
 
         $prepare = $conn->prepare("SELECT hash FROM user
             WHERE hash = :hash");
@@ -140,6 +137,7 @@
           $correct = true;
         }
       } catch(PDOException $e) {
+        // echo $e->getMessage();
       }
     }
 
@@ -162,6 +160,7 @@
 
         return $prepare->fetchAll(PDO::FETCH_ASSOC);
       } catch(PDOException $e) {
+        // echo $e->getMessage();
       }
     }
 
@@ -184,6 +183,7 @@
 
         return $prepare->fetch(PDO::FETCH_ASSOC);
       } catch(PDOException $e) {
+        $e->getMessage();
       }
     }
 

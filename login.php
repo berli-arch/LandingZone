@@ -19,12 +19,12 @@
 
     // Validating the entered email
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      /*echo
+      echo
       "<script>
         alert('Email format is incorrect');
         document.location.href = 'login.html';
       </script>";
-      return;*/
+      return;
     }
 
     // Generating the hash, checking if the user is not already registered and saving the cookie.
@@ -35,11 +35,10 @@
       setcookie("usr_hash", $password_hash);
       header('location:index.php');
     } else {
-      /*echo
+      echo
       "<script>
         alert('This account may not exist');
         document.location.href = 'login.html';
-      </script>";*/
-      echo "Would have opened a message box";
+      </script>";
     }
   }
