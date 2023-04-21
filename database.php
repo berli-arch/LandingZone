@@ -11,15 +11,16 @@
   function createConn() {
     $conn = null;
 
-    $servername = "lz-2023.database.windows.net";
-    $username = "bm-2023";
+    $servername = "bm2023.mysql.database.azure.com";
+    $username = "bm2023";
     $password = "Lbs4ever.";
-    $dbname = "lz-2023";
+    $dbname = "account";
 
     try {
       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch(PDOException $e) {
+      echo $e;
     }
 
     return $conn;
@@ -122,8 +123,11 @@
       try {
         $conn = createConn();
         if(!$conn) {
+          echo "Failed";
           return false;
         }
+
+        echo "In loop";
 
         $prepare = $conn->prepare("SELECT hash FROM user
             WHERE hash = :hash");
