@@ -30,14 +30,14 @@
 
     // Generating the hash, checking if the user is not already registered and saving the cookie.
     $to_hash = $email.$password;
-    $password_hash = enc_password($to_hash);
+    $password_hash = $this->enc_password($to_hash);
 
     echo "Test";
-    if(checkUserHash($password_hash)) {
+    if($this->checkUserHash($password_hash)) {
       echo "Test1";
       setcookie("usr_hash", $password_hash);
       echo "Test2";
-      header("Location: https://landingzone-bm.azurewebsites.net/index.php");
+      header("Location: index.php");
       exit;
       echo "Test3";
     } else {
