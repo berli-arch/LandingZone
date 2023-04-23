@@ -17,7 +17,6 @@
     $email = $_POST['email'];
     $password = $_POST['pwd'];
 
-    echo "Login";
     // Validating the entered email
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       echo
@@ -32,14 +31,11 @@
     $to_hash = $email.$password;
     $password_hash = $this->enc_password($to_hash);
 
-    echo "Test";
     if($this->checkUserHash($password_hash)) {
-      echo "Test1";
       setcookie("usr_hash", $password_hash);
-      echo "Test2";
+      echo $password_hash;
       header("Location: index.php");
       exit;
-      echo "Test3";
     } else {
       echo
       "<script>
