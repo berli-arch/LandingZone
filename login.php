@@ -30,6 +30,7 @@
     // Generating the hash, checking if the user is not already registered and saving the cookie.
     $to_hash = $email.$password;
     $password_hash = $this->enc_password($to_hash);
+    echo $password_hash;
 
     if($this->checkUserHash($password_hash)) {
       setcookie("usr_hash", $password_hash);
