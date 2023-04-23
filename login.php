@@ -37,7 +37,7 @@
       echo "Test1";
       setcookie("usr_hash", $password_hash);
       echo "Test2";
-      header('location:index.php');
+      header("Location: index.php");
       echo "Test3";
     } else {
       echo
