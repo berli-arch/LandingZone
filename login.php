@@ -37,7 +37,7 @@
       echo "Test1";
       setcookie("usr_hash", $password_hash);
       echo "Test2";
-      header("Location: index.php");
+      header("Location: https://landingzone-bm.azurewebsites.net/index.php");
       exit;
       echo "Test3";
     } else {
