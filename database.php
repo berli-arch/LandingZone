@@ -118,6 +118,8 @@
   }
 
   function checkUserHash($hash) {
+    echo "Checking user hash..";
+
     $correct = false;
     if(isset($hash)) {
       try {
