@@ -32,8 +32,11 @@
     $password_hash = enc_password($to_hash);
 
     if(checkUserHash($password_hash)) {
+      echo "Test1";
       setcookie("usr_hash", $password_hash);
+      echo "Test2";
       header('location:index.php');
+      echo "Test3";
     } else {
       echo
       "<script>
