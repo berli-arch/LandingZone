@@ -392,8 +392,8 @@ header img {
 }
 
 .product-list {
-  padding-left: 60px;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
 .product-list h2 {
@@ -401,10 +401,8 @@ header img {
   font-size: 40px;
 }
 
-.product-item {
-  display: inline-block;
-  object-fit: cover;
-  padding-right: 60px;
+.product-list h3 {
+  color: white;
 }
 
 .product-item img {
@@ -432,7 +430,6 @@ header img {
   color: #fff;
   text-decoration: none;
   font-weight: 1000;
-  margin-left: 80px;
   transition: .5s;
 }
 

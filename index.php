@@ -16,6 +16,21 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- Bootstrap Font Icon CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
@@ -57,7 +72,7 @@
    */
     function show_undefined() {
       echo '<header>';
-      echo '<img src="../landing_zone_logo.png">';
+      echo '<img src="landing_zone_logo.png">';
       echo '<nav id="nav_id">';
       echo '<a href="login.html">Login</a>';
       echo '<a href="register.html">Register</a>';
@@ -70,7 +85,7 @@
    */
     function show_account() {
       echo '<header>';
-      echo '<img src="../landing_zone_logo.png">';
+      echo '<img src="landing_zone_logo.png">';
       echo '<nav id="nav_id">';
       echo '<a href="signout.php">Sign Out</a>';
       echo '<a href="account.php">Account</a>';
@@ -82,19 +97,8 @@
   <div class="product-list">
     <h2>Featured T-Shirts</h2>
     <div class="product-item">
-      <img src="products/Versace T-Shirt White.jpg" alt="T-Shirt 1">
       <h3>Versace T-Shirt White</h3><br>
-      <a href="https://www.versace.com/eu/barocco-silhouette-logo-t-shirt-1w010/1006974-1A04949_AT4_M_1W010__.html?lgw_code=16201-1006974-1A04949_AT4_M_1W010__&&wt_mc=at.shopping.google.link.shopping&gclid=Cj0KCQjw2v-gBhC1ARIsAOQdKY2LPU9rJPXg5o1rc0cHPb76OPaM3ncyCbe8nmlILI3jzIn2SQ8dZHEaAq8PEALw_wcB&gclsrc=aw.ds" target="_blank">Learn More</a>
-    </div>
-    <div class="product-item">
-      <img src="products/Versace Jeans Couture Logo Couture T-Shirt for Men.jpg" alt="T-Shirt 2">
-      <h3>Versace Jeans Couture <br> Logo Couture T-Shirt <br> for Men</h3>
-      <a href="https://www.versace.com/eu/jeans-couture/herren/kleidung/t-shirts-und-poloshirts/logo-couture-t-shirt-e801/E74GAH6S0-EJS161_E801.html" target="_blank">Learn More</a>
-    </div>
-    <div class="product-item"><br>
-      <img src="products/Versace Allover T-Shirt with Crystals.jpg" alt="T-Shirt 3">
-      <h3>Versace Allover T-Shirt <br> with Crystals</h3>
-      <a href="https://www.versace.com/eu/en/women/clothing/t-shirts-sweatshirts/t-shirts/crystal-versace-allover-t-shirt-2b300/1009337-1A05387_2B300.html" target="_blank">Learn More</a>
+      <a target="_blank">Learn More</a>
     </div>
   </div>
 
